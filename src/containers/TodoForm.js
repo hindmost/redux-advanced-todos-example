@@ -40,8 +40,8 @@ class TodoForm extends Component {
       <input type="hidden" className="form-control" name="id" value={formData.id} />
       <div className={this.fieldClass('title', formErrors)}>
         <label>Title *</label>
-        <input type="text" className="form-control" name="title" value={formData.title || null} onChange={this.onChange.bind(this)} />
-        <FieldErrorBlock {...this.props} name='title' text='Wrong title' />
+        <input type="text" className="form-control" name="title" value={formData.title} onChange={this.onChange.bind(this)} />
+        <FieldErrorBlock {...this.props} name='title' text='Must contain 2-16 characters' />
       </div>
 
       <div className="form-group">
@@ -55,14 +55,14 @@ class TodoForm extends Component {
 
       <div className={this.fieldClass('description', formErrors)}>
         <label>Description</label>
-        <textarea className="form-control" name="description" rows="3" value={formData.description || null} onChange={this.onChange.bind(this)}></textarea>
-        <FieldErrorBlock {...this.props} name='description' text='Wrong description' />
+        <textarea className="form-control" name="description" rows="3" value={formData.description} onChange={this.onChange.bind(this)}></textarea>
+        <FieldErrorBlock {...this.props} name='description' text='Must contain max. 120 characters' />
       </div>
 
       <div className={this.fieldClass('deadline', formErrors)}>
         <label>Deadline date</label>
-        <input type="date" className="form-control" name="deadline" value={formData.deadline || null} onChange={this.onChange.bind(this)} />
-        <FieldErrorBlock {...this.props} name='deadline' text='Wrong date' />
+        <input type="date" className="form-control" name="deadline" value={formData.deadline} onChange={this.onChange.bind(this)} />
+        <FieldErrorBlock {...this.props} name='deadline' text='Must be a date in yyyy.mm.dd format' />
       </div>
 
       <button type="submit" className="btn btn-default">{formData.id? 'Update' : 'Create'}</button>
