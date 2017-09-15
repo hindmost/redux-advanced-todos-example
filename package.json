@@ -2,7 +2,6 @@
   "name": "redux-advanced-todos-example",
   "version": "0.1.0",
   "description": "Advanced version of the Redux TodoMVC example",
-  "homepage": "https://github.com/hindmost/redux-advanced-todos-example",
   "license": "MIT",
   "dependencies": {
     "react": "^15.5.4",
